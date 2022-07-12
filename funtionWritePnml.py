@@ -8,7 +8,7 @@ def write_Pnml(list_Goal):
     net.set('type', 'P/T net')
 
     token = ET.SubElement(net, 'token')
-    token.set('id', 'Net-One')
+    token.set('id', 'Default')
     token.set('enabled', 'true')
     token.set('red', '0')
     token.set('green', '0')
@@ -19,19 +19,19 @@ def write_Pnml(list_Goal):
     element1 = ET.SubElement(place, 'graphics') 
     sub_element1 = ET.SubElement(element1, 'position') 
     sub_element1.set('x', '210.0') 
-    sub_element1.set('y', '255.0') 
+    sub_element1.set('y', '195.0') 
 
     element2 = ET.SubElement(place, 'name') 
     sub_element2 = ET.SubElement(element2, 'value') 
     sub_element2.text = list_Goal[0].place_Id()
     sub_element2 = ET.SubElement(element2, 'graphics')
     sub_sub_element2 = ET.SubElement(sub_element2, 'offset')
-    sub_sub_element2.set('x', '210.0') 
-    sub_sub_element2.set('y', '255.0') 
+    sub_sub_element2.set('x', '0.0') 
+    sub_sub_element2.set('y', '0.0') 
 
     element3 = ET.SubElement(place, 'initialMarking')
     sub_element3 = ET.SubElement(element3, 'value')
-    sub_element3.text = 'Default, 0'
+    sub_element3.text = 'Default,0'
     sub_element3 = ET.SubElement(element3, 'graphics')
     sub_sub_element3 = ET.SubElement(sub_element3, 'offset')
     sub_sub_element3.set('x', '0.0') 

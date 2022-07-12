@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 
 import funtionWriteXml as WXml
 import funtionWritePnml as WPnml
+import funtionReWritePnml as RWPnml
 
 from xml.etree.ElementTree import parse
 document = parse('Monitor_Night_Sleep.kml') 
@@ -203,8 +204,10 @@ print(list_Goal[0].place_Capacity())
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
 pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal))
-  
+
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
     f.write(pnml_pnml)
-    f.close()
+    f.close() 
+
+RWPnml.re_write_Pnml()
