@@ -197,13 +197,16 @@ for index, row in df_Goal.iterrows():
         Goal = Place(row['Id'], row['Name'], 30, -10, aux_Mark, 0)
         list_Goal.append(Goal)
 
+print(len(list_Goal))
 print(list_Goal[0].place_Id())
 print(list_Goal[0].place_Capacity())
+
+auxParaFor = 3
 
 # Write .pnml file
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal, auxParaFor))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
