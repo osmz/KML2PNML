@@ -1,12 +1,14 @@
+from numpy import transpose
 import pandas as pd
 import xml.etree.ElementTree as ET
 
 import funtionWriteXml as WXml
 import funtionWritePnml as WPnml
-import funtionReWritePnml as RWPnml
+import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
-document = parse('Monitor_Night_Sleep.kml') 
+document = parse('oscar.kml') 
+''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
 
 # Define the classes.
@@ -182,6 +184,9 @@ df = pd.DataFrame({'Model':Model, 'Id':Id, 'Name':Name, 'Type':Type, 'Pattern':P
 ''' df = transpose(df) '''
 
 print(df)
+print('')
+print('Dados de prueba')
+print()
 
 # Created object
 
@@ -197,20 +202,55 @@ for index, row in df_Goal.iterrows():
         Goal = Place(row['Id'], row['Name'], 30, -10, aux_Mark, 0)
         list_Goal.append(Goal)
 
-print(len(list_Goal))
-print(list_Goal[0].place_Id())
-print(list_Goal[0].place_Capacity())
+auxParaFor = len(list_Goal)
 
-auxParaFor = 3
+# Write .xml file
 
-# Write .pnml file
+quant_Transition_ToRefineOR = ToRefineOr.count('NONE')
+quant_Transition_ToRefineAnd = ToRefineAnd.count('NONE')
+quant_Transition = (len(ToRefineOr) - quant_Transition_ToRefineOR) + (len(ToRefineAnd) - quant_Transition_ToRefineAnd)
+print(quant_Transition)
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal, auxParaFor))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal, auxParaFor, quant_Transition, ToRefineAnd, ToRefineOr))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
     f.write(pnml_pnml)
     f.close() 
 
-RWPnml.re_write_Pnml()
+WFXml.write_File_Xml()
+
+df = transpose(df)
+print(df[4])
+
+print(Id)
+print(Name)
+print(InRefineAnd)
+print(InRefineOr)
+print(ToRefineAnd)
+print(ToRefineOr)
+
+''' df = transpose(df)
+
+print(ToRefineAnd)
+print(df[0])
+print(ToRefineOr[0])
+cadena = ToRefineOr[0]
+separador = ';'
+separador = cadena.split(separador)
+print(separador)
+print(separador[0])
+print(Id) '''
+
+cadena = ToRefineOr[2]
+separador = ';'
+separador = cadena.split(separador)
+print(len(separador))
+print()
+
+index = 2
+for aux_teste in range((index + 1), (index + 1) + len(separador), 1):
+    print(aux_teste)
+
+
