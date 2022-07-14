@@ -243,14 +243,7 @@ print(separador)
 print(separador[0])
 print(Id) '''
 
-cadena = ToRefineOr[2]
+cadena = ToRefineAnd[1]
 separador = ';'
 separador = cadena.split(separador)
 print(len(separador))
-print()
-
-index = 2
-for aux_teste in range((index + 1), (index + 1) + len(separador), 1):
-    print(aux_teste)
-
-
