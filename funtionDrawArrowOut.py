@@ -1,10 +1,11 @@
 import xml.etree.ElementTree as ET
 
-def draw_Arrow(net, index, list_Goal):
+def draw_Arrow(net, index, list_Goal, list_Vector, list_Connection, list_Transition):
     # Arc 1
     # Son 1.4
     arc = ET.SubElement(net, 'arc') 
     arc.set('id', 'T' + str(index) + ' to ' + list_Goal[index].place_Id())
+    print('T' + str(index) + ' to ' + list_Goal[index].place_Id())
     arc.set('source', 'T' + str(index))
     arc.set('target', list_Goal[index].place_Id())
 

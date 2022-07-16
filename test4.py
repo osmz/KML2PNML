@@ -2,12 +2,14 @@ from numpy import transpose
 import pandas as pd
 import xml.etree.ElementTree as ET
 
+import funtionCalculateQuantifyTransition as CQT
 import funtionWriteXml as WXml
 import funtionWritePnml as WPnml
 import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
-document = parse('oscar.kml') 
+document = parse('Oscar3.kml') 
+''' document = parse('oscar.kml') ''' 
 ''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
 
@@ -81,6 +83,10 @@ list_Goal              = list()
 list_Operation         = list()
 list_Object            = list()
 list_Responsability    = list()
+
+list_Vector            = []
+list_Connection        = []
+list_Transition        = []
 
 # FOR to iterate through each element, find the first children and take their values. For those who are children of children add an empty space, because you can not access them.
 
@@ -204,15 +210,36 @@ for index, row in df_Goal.iterrows():
 
 auxParaFor = len(list_Goal)
 
+# Calculate the vector for the transitions
+
+cont_Transition = CQT.calculate_Quantify_Transition(ToRefineAnd, ToRefineOr, list_Vector, list_Connection, list_Transition)
+
+df_Transition = pd.DataFrame({'List Vector':list_Vector, 'List Connection':list_Connection, 'List Transition':list_Transition})
+
+print(df_Transition)
+
+# Calculate the number of transitions
+
+quant_Transition = cont_Transition
+
+''' quant_Transition_ToRefineAnd = ToRefineAnd.count('NONE')
+quant_Transition_ToRefineOR = 0
+for index in range(len(ToRefineOr)):
+    if ToRefineOr[index] != 'NONE':
+        cadena = ToRefineOr[index]
+        separador = ';'
+        separador = cadena.split(separador)
+        len_separador = len(separador)
+        quant_Transition_ToRefineOR += len_separador
+
+quant_Transition = (len(ToRefineAnd) - quant_Transition_ToRefineAnd) + quant_Transition_ToRefineOR
+print('quant_Transition')
+print(quant_Transition) '''
+
 # Write .xml file
 
-quant_Transition_ToRefineOR = ToRefineOr.count('NONE')
-quant_Transition_ToRefineAnd = ToRefineAnd.count('NONE')
-quant_Transition = (len(ToRefineOr) - quant_Transition_ToRefineOR) + (len(ToRefineAnd) - quant_Transition_ToRefineAnd)
-print(quant_Transition)
-
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal, auxParaFor, quant_Transition, ToRefineAnd, ToRefineOr))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(list_Goal, auxParaFor, quant_Transition, ToRefineAnd, ToRefineOr, list_Vector, list_Connection, list_Transition))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
@@ -221,8 +248,10 @@ with open("Monitor_Night_Sleep.xml", "wb") as f:
 
 WFXml.write_File_Xml()
 
-df = transpose(df)
-print(df[4])
+# Space for test codes
+
+''' df = transpose(df)
+print(df[4]) '''
 
 print(Id)
 print(Name)
@@ -243,7 +272,7 @@ print(separador)
 print(separador[0])
 print(Id) '''
 
-cadena = ToRefineAnd[1]
+''' cadena = ToRefineAnd[1]
 separador = ';'
 separador = cadena.split(separador)
-print(len(separador))
+print(separador[1]) '''
