@@ -50,93 +50,36 @@ def write_Pnml(list_Goal, auxParaFor, quant_Transition, ToRefineAnd, ToRefineOr,
     for index in range(len(ToRefineAnd)):
         if ToRefineAnd[index] != 'NONE' and ToRefineOr[index] == 'NONE':
             print('Posicion 1')
-            DArrowOut.draw_Arrow(net, index, list_Goal, list_Vector, list_Connection, list_Transition)
-            cadena = ToRefineAnd[index]
-            separador = ';'
-            separador = cadena.split(separador)
-            indice = ToRefineAnd.index(cadena)
-            for index in range(len(separador)):
-                DArrowInt.draw_Arrow_Int(net, separador, indice, index)
-
+            list_Type = 'ToRefineAnd'
+            DArrowOut.draw_Arrow_Out(list_Type, ToRefineAnd , ToRefineOr, index, net, list_Vector, list_Transition, list_Goal)
+            print('index teste')
+            print(index)
+            DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)
+        
         elif ToRefineAnd[index] != 'NONE' and ToRefineOr[index] != 'NONE':
             if ToRefineAnd[index] != 'NONE':
-                print('Posicion 2')
-                DArrowOut.draw_Arrow(net, index, list_Goal, list_Vector, list_Connection, list_Transition)
-                cadena = ToRefineAnd[index]
-                separador = ';'
-                separador = cadena.split(separador)
-                indice = ToRefineAnd.index(cadena)
-                aux_indice = indice
-                for aux_index in range(len(separador)):
-                    DArrowInt.draw_Arrow_Int(net, separador, indice, aux_index)
-                aux_indice += 1
-                            
-            if ToRefineOr[index] != 'NONE':
-                print('index')
+                print('Posicion 2')      
+                list_Type = 'ToRefineAnd'          
+                DArrowOut.draw_Arrow_Out(list_Type, ToRefineAnd, ToRefineOr, index, net, list_Vector, list_Transition, list_Goal)
+                print('index teste 2')
                 print(index)
-                print(ToRefineOr[index])
-                cadena = ToRefineOr[index]
-                separador = ';'
-                separador = cadena.split(separador)
-                print(separador)
-                for aux_index in range((index + 1), (index + 1) + len(separador), 1):
-                    # Arc 1
-                    # Son 1.4
-                    arc = ET.SubElement(net, 'arc') 
-                    arc.set('id', 'T' + str(aux_index) + ' to ' + list_Goal[index].place_Id())
-                    arc.set('source', 'T' + str(aux_index))
-                    arc.set('target', list_Goal[index].place_Id())
-
-                    # Son 1.4.1
-                    element1 = ET.SubElement(arc, 'graphics')
-
-                    # Son 1.4.2
-                    element2 = ET.SubElement(arc, 'inscription')
-                    # Son 1.4.2.1
-                    sub_element2 = ET.SubElement(element2, 'value') 
-                    sub_element2.text = 'Default,' + '1'
-                    # Son 1.4.2.2
-                    sub_element2 = ET.SubElement(element2, 'graphics')
-
-                    # Son 1.4.3
-                    element3 = ET.SubElement(arc, 'tagged')
-                    # Son 1.4.3.1 
-                    sub_element3 = ET.SubElement(element3, 'value') 
-                    sub_element3.text = 'false'
-
-                    # Son 1.4.4
-                    element4 = ET.SubElement(arc, 'arcpath')
-                    element4.set('id', '000')
-                    element4.set('x', '0')
-                    element4.set('y', '0')
-                    element4.set('curvePoint', 'false')
-
-                    # Son 1.4.5
-                    element5 = ET.SubElement(arc, 'arcpath')
-                    element5.set('id', '001')
-                    element5.set('x', '0')
-                    element5.set('y', '0')
-                    element5.set('curvePoint', 'false')
-
-                    # Son 1.4.6
-                    element6 = ET.SubElement(arc, 'type')
-                    element6.set('value', 'normal')
-                
-                indice = aux_indice
-                for aux_index in range(len(separador)):
-                    DArrowInt.draw_Arrow_Int(net, separador, indice, aux_index)
-                    if len(separador) == 1:
-                        indice += 1
+                DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)
             
+            if ToRefineOr[index] != 'NONE':
+                print('Posicion 3')    
+                list_Type = 'ToRefineOr'            
+                DArrowOut.draw_Arrow_Out(list_Type, ToRefineAnd, ToRefineOr, index, net, list_Vector, list_Transition, list_Goal)
+                print('index teste 3')
+                print(index)
+                DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)
+        
         elif ToRefineAnd[index] == 'NONE' and ToRefineOr[index] != 'NONE':
-            print('Posicion 3')
+            print('Posicion 4')
+            list_Type = 'ToRefineOr'            
+            DArrowOut.draw_Arrow_Out(list_Type, ToRefineAnd, ToRefineOr, index, net, list_Vector, list_Transition, list_Goal)
+            print('index teste 4')
             print(index)
-            DArrowOut.draw_Arrow(net, index, list_Goal, list_Vector, list_Connection, list_Transition)
-            cadena = ToRefineAnd[index]
-            separador = ';'
-            separador = cadena.split(separador)
-            indice = ToRefineAnd.index(cadena)
-            for index in range(len(separador)):
-                DArrowInt.draw_Arrow_Int(net, separador, indice, index)
+            DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)
+        
 
     return pnml
