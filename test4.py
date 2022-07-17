@@ -8,7 +8,7 @@ import funtionWritePnml as WPnml
 import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
-document = parse('Oscar3.kml') 
+document = parse('oscar.kml') 
 ''' document = parse('oscar.kml') ''' 
 ''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
@@ -259,6 +259,8 @@ print(InRefineAnd)
 print(InRefineOr)
 print(ToRefineAnd)
 print(ToRefineOr)
+
+print(list_Goal[3].place_Id())
 
 ''' df = transpose(df)
 
