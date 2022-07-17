@@ -79,7 +79,6 @@ def write_Pnml(list_Goal, auxParaFor, quant_Transition, ToRefineAnd, ToRefineOr,
             DArrowOut.draw_Arrow_Out(list_Type, ToRefineAnd, ToRefineOr, index, net, list_Vector, list_Transition, list_Goal)
             print('index teste 4')
             print(index)
-            DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)
-        
+            DArrowInt.draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, list_Transition)  
 
     return pnml

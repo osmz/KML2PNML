@@ -222,20 +222,6 @@ print(df_Transition)
 
 quant_Transition = cont_Transition
 
-''' quant_Transition_ToRefineAnd = ToRefineAnd.count('NONE')
-quant_Transition_ToRefineOR = 0
-for index in range(len(ToRefineOr)):
-    if ToRefineOr[index] != 'NONE':
-        cadena = ToRefineOr[index]
-        separador = ';'
-        separador = cadena.split(separador)
-        len_separador = len(separador)
-        quant_Transition_ToRefineOR += len_separador
-
-quant_Transition = (len(ToRefineAnd) - quant_Transition_ToRefineAnd) + quant_Transition_ToRefineOR
-print('quant_Transition')
-print(quant_Transition) '''
-
 # Write .xml file
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 

@@ -8,7 +8,6 @@ def draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, 
 
         for aux_Separador in range(len(separador)):
             indice_1 = list_Vector.index(str(separador[aux_Separador]))
-            ''' indice_2 = ToRefineAnd.index(cadena) '''
 
             # Arc 2
             # Son 1.5
@@ -61,7 +60,6 @@ def draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, 
 
         for aux_Separador in range(len(separador)):
             indice_1 = list_Vector.index(str(separador[aux_Separador]))
-            ''' indice_2 = ToRefineAnd.index(cadena) '''
 
             # Arc 2
             # Son 1.5
