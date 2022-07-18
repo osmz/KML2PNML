@@ -54,6 +54,7 @@ def draw_Arrow_Out(list_Type, ToRefineAnd, ToRefineOr, index, net, list_Vector, 
         cadena = ToRefineOr[index]
         separador = ';'
         separador = cadena.split(separador)
+        
         for aux_Separador in range(len(separador)):
             indice_1 = list_Vector.index(str(separador[aux_Separador]))
             indice_2 = ToRefineOr.index(cadena)
