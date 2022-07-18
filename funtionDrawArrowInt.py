@@ -52,6 +52,10 @@ def draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, 
             # Son 1.5.6
             element6 = ET.SubElement(arc, 'type')
             element6.set('value', 'normal')
+
+            list_Vector[indice_1] = str(separador[aux_Separador]) + '-Ok'
+            print('list_Vector_test')
+            print(list_Vector)
     
     if list_Type == 'ToRefineOr':
         cadena = ToRefineOr[index]
@@ -104,3 +108,7 @@ def draw_Arrow_Int(list_Type, ToRefineAnd, ToRefineOr, index, list_Vector, net, 
             # Son 1.5.6
             element6 = ET.SubElement(arc, 'type')
             element6.set('value', 'normal')
+
+            list_Vector[indice_1] = str(separador[aux_Separador]) + '-Ok'
+            print('list_Vector_test')
+            print(list_Vector)
