@@ -8,7 +8,7 @@ import funtionWritePnml as WPnml
 import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
-document = parse('oscar.kml') 
+document = parse('Oscar2.kml') 
 ''' document = parse('oscar.kml') ''' 
 ''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
@@ -264,3 +264,9 @@ print(Id) '''
 separador = ';'
 separador = cadena.split(separador)
 print(separador[1]) '''
+
+''' indice_test = ToRefineOr.index('21')
+ToRefineOr[indice_test] = '21' + '-Ok'
+print('indice_test')
+print(ToRefineOr) '''
+
