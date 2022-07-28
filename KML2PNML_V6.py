@@ -226,7 +226,7 @@ quant_Transition = cont_Transition
 # Write .xml file
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, list_Transition, output_Vector_List))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, list_Transition, output_Vector_List, Id))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
@@ -272,7 +272,6 @@ print(ToRefineOr) '''
 
 print(df_Transition) '''
 
-
-
-
-
+''' print(list_Goal[0].place_Id())
+print(list_Goal[0].place_PositionX())
+print(list_Goal[0].place_PositionY()) '''
