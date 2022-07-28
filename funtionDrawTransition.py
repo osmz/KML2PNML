@@ -1,21 +1,105 @@
 import xml.etree.ElementTree as ET
 
-def draw_Transition(net, index, starting_Position_X_Transition, starting_Position_Y_Transition):
-    # Convert the positions to string
-    starting_Position_X_Transition = str(starting_Position_X_Transition)
-    starting_Position_Y_Transition = str(starting_Position_Y_Transition)
-
+def draw_Transition(net, index, input_Vector_List, output_Vector_List, Id, list_Goal, list_Transition):
     # Transition
     # Son 1.3
     transition = ET.SubElement(net, 'transition') 
     transition.set('id', 'T' + str(index))
 
+    print('T' + str(index))
+    
+    # Operations to calculate the coordinates in X and Y
+
+    indice_Reference = index
+    ''' print('indice_Reference')
+    print(indice_Reference) '''
+
+    lst_list_Transition = list_Transition
+    indice_Reference = lst_list_Transition.index(indice_Reference)
+    ''' print('indice_Reference_1')
+    print(indice_Reference) '''
+    
+    indice_Reference_1 = input_Vector_List[indice_Reference]
+    ''' print('indice_Reference_1')
+    print(indice_Reference_1) '''
+
+    indice_Reference_2 = output_Vector_List[indice_Reference]
+    ''' print('indice_Reference_1')
+    print(indice_Reference_2) '''
+    
+    lst_Input_Vector = input_Vector_List
+    indice_Reference_Input = lst_Input_Vector.index(indice_Reference_1)
+    ''' print('indice_Reference_Input')
+    print(indice_Reference_Input) '''
+
+    lst_Output_Vector = output_Vector_List
+    indice_Reference_Output = lst_Output_Vector.index(indice_Reference_2)
+    ''' print('indice_Reference_Output')
+    print(indice_Reference_Output) '''
+
+    input_Position = input_Vector_List[indice_Reference_Input]
+    ''' print('input_Position')
+    print(input_Position) '''
+    output_Position = output_Vector_List[indice_Reference_Output]
+    ''' print('output_Position')
+    print(output_Position) '''
+
+    lst_Id = Id
+    indice_Intput = lst_Id.index(input_Position)
+    indice_Output = lst_Id.index(output_Position)
+
+    indice_Intput_X = float(list_Goal[indice_Intput].place_PositionX())
+    indice_Intput_Y = float(list_Goal[indice_Intput].place_PositionY())
+
+    ''' print('indice_Intput_X')
+    print(indice_Intput_X)
+    print('indice_Intput_Y')
+    print(indice_Intput_Y) '''
+
+    indice_Output_X = float(list_Goal[indice_Output].place_PositionX())
+    indice_Output_Y = float(list_Goal[indice_Output].place_PositionY())
+
+    ''' print('indice_Output_X')
+    print(indice_Output_X)
+    print('indice_Output_Y')
+    print(indice_Output_Y) '''
+
+    indice_Final_X = indice_Intput_X -  indice_Output_X
+    indice_Final_Y = indice_Intput_Y -  indice_Output_Y
+
+    if indice_Final_X < 0:
+        indice_Final_X = indice_Final_X * (-1)
+    
+    if indice_Final_Y < 0:
+        indice_Final_Y = indice_Final_Y * (-1)
+    
+    indice_Final_X = indice_Final_X / 2
+    indice_Final_Y = indice_Final_Y / 2
+
+    if indice_Intput_X < indice_Output_X:
+        indice_Final_X = indice_Intput_X + indice_Final_X
+    else:
+        indice_Final_X = indice_Output_X + indice_Final_X
+    
+    if indice_Intput_Y < indice_Output_Y:
+        indice_Final_Y = indice_Intput_Y + indice_Final_Y
+    else:
+        indice_Final_Y = indice_Output_Y + indice_Final_Y
+    
+    indice_Final_X = str(indice_Final_X)
+    indice_Final_Y = str(indice_Final_Y)
+
+    ''' print('indice_Final_X')
+    print(indice_Final_X)
+    print('indice_Final_Y')
+    print(indice_Final_Y) '''
+
     # Son 1.3.1
     element1 = ET.SubElement(transition, 'graphics')
     # Son 1.3.1.1 
     sub_element1 = ET.SubElement(element1, 'position') 
-    sub_element1.set('x', starting_Position_X_Transition) 
-    sub_element1.set('y', starting_Position_Y_Transition) 
+    sub_element1.set('x', indice_Final_X) 
+    sub_element1.set('y', indice_Final_Y) 
 
     # Son 1.3.2
     element2 = ET.SubElement(transition, 'name')
@@ -58,7 +142,3 @@ def draw_Transition(net, index, starting_Position_X_Transition, starting_Positio
     # Son 1.3.7.1 
     sub_element7 = ET.SubElement(element7, 'value') 
     sub_element7.text = '1'
-
-    # Convert the positions to float
-    starting_Position_X_Transition = float(starting_Position_X_Transition)
-    starting_Position_Y_Transition = float(starting_Position_Y_Transition)
