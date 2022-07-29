@@ -84,6 +84,7 @@ list_Responsability    = list()
 
 input_Vector_List      = []
 list_Connection        = []
+list_Type              = []
 list_Transition        = []
 output_Vector_List     = []
 
@@ -213,20 +214,22 @@ helper_For_Goal_Size = len(list_Goal)
 
 # Calculate the vector for the transitions
 
-cont_Transition = CQT.calculate_Quantify_Transition(ToRefineAnd, ToRefineOr, input_Vector_List, list_Connection, list_Transition, list_Goal, output_Vector_List)
+cont_Transition = CQT.calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List, list_Connection, list_Type, list_Transition, list_Goal, output_Vector_List, ExpectationOf)
 
-df_Transition = pd.DataFrame({'Input Vector List':input_Vector_List, 'List Connection':list_Connection, 'List Transition':list_Transition, 'Output Vector List':output_Vector_List})
+df_Transition = pd.DataFrame({'Input Vector List':input_Vector_List, 'List Connection':list_Connection, 'List Type':list_Type, 'List Transition':list_Transition, 'Output Vector List':output_Vector_List})
 
 print(df_Transition)
 
 # Calculate the number of transitions
 
 quant_Transition = cont_Transition
+print('quant_Transition')
+print(quant_Transition)
 
 # Write .xml file
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, list_Transition, output_Vector_List, Id))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, list_Type))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
@@ -243,6 +246,7 @@ print(df[6:8]) '''
 print(Id)
 print(ToRefineAnd)
 print(ToRefineOr)
+print(ExpectationOf)
 
 print(list_Goal[3].place_Id())
 
@@ -275,3 +279,7 @@ print(df_Transition) '''
 ''' print(list_Goal[0].place_Id())
 print(list_Goal[0].place_PositionX())
 print(list_Goal[0].place_PositionY()) '''
+
+print(ToRefineAnd[13])
+print(ToRefineOr[13])
+print(ExpectationOf[13])
