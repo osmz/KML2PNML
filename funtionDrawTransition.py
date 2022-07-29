@@ -6,7 +6,7 @@ def draw_Transition(net, index, input_Vector_List, output_Vector_List, Id, list_
     transition = ET.SubElement(net, 'transition') 
     transition.set('id', 'T' + str(index))
 
-    print('T' + str(index))
+    ''' print('T' + str(index)) '''
     
     # Operations to calculate the coordinates in X and Y
 
