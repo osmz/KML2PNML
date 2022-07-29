@@ -5,7 +5,7 @@ import funtionDrawTransition as DTransition
 import funtionDrawArrowOut as DArrowOut
 import funtionDrawArrowInt as DArrowInt
 
-def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, list_Transition, output_Vector_List, Id):
+def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, list_Type):
     # Father of the network - has children
     pnml = ET.Element('pnml')
 
@@ -33,6 +33,6 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_L
     # For to create all elements Arc
     for index in range(len(input_Vector_List)): 
         DArrowOut.draw_Arrow_Out(list_Transition, index, net, output_Vector_List)
-        DArrowInt.draw_Arrow_Int(net, input_Vector_List, index, list_Transition)
+        DArrowInt.draw_Arrow_Int(list_Type, net, input_Vector_List, index, list_Transition)
 
     return pnml
