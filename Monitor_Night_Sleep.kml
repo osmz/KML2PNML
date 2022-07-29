@@ -402,25 +402,25 @@ Detection</Name>
 </Position>
 </Graphics>
 </Element>
-<Element>
-<Model>Goal</Model>
-<Id>1148</Id>
-<Name>Wait for Family confirmation</Name>
-<Type>SubGoal</Type>
-<Refinements>
-<ToRefineOr>1266</ToRefineOr>
-<InRefineOr>1146</InRefineOr>
-<ExpectationOf>1160</ExpectationOf>
-</Refinements>
-<Graphics>
-<Height>54</Height>
-<Widtht>111</Widtht>
-<Position>
-<x>1342.0</x>
-<y>263.0</y>
-</Position>
-</Graphics>
-</Element>
+    <Element>
+        <Model>Goal</Model>
+        <Id>1148</Id>
+        <Name>Wait for Family confirmation</Name>
+        <Type>SubGoal</Type>
+        <Refinements>
+            <ToRefineOr>1266</ToRefineOr>
+            <InRefineOr>1146</InRefineOr>
+            <ExpectationOf>1160</ExpectationOf>
+        </Refinements>
+        <Graphics>
+            <Height>54</Height>
+            <Widtht>111</Widtht>
+            <Position>
+                <x>1342.0</x>
+                <y>263.0</y>
+            </Position>
+        </Graphics>
+    </Element>
 <Element>
 <Model>Goal</Model>
 <Id>1151</Id>
