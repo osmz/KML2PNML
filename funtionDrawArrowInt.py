@@ -1,10 +1,6 @@
 import xml.etree.ElementTree as ET
 
-def draw_Arrow_Int(list_Type, net, input_Vector_List, index, list_Transition):
-    if list_Type[index] == 'Expectation':
-        normal_Or_inhibitor = 'inhibitor'
-    else:
-        normal_Or_inhibitor = 'normal'
+def draw_Arrow_Int(net, input_Vector_List, index, list_Transition):
     # Arc 2
     # Son 1.5
     arc = ET.SubElement(net, 'arc') 
@@ -47,4 +43,4 @@ def draw_Arrow_Int(list_Type, net, input_Vector_List, index, list_Transition):
 
     # Son 1.5.6
     element6 = ET.SubElement(arc, 'type')
-    element6.set('value', normal_Or_inhibitor)
+    element6.set('value', 'normal')

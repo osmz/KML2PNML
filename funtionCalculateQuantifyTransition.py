@@ -10,9 +10,9 @@ def calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List
                 input_Vector_List.append(separador[index_Separador_And])
                 list_Connection.append('And')
                 indice = lst.index(separador[index_Separador_And])
-                list_Type.append(list_Goal[indice].place_Type())
+                list_Type.append(list_Goal[indice].goal_Type())
                 list_Transition.append(cont_Transition)
-                output_Vector_List.append(list_Goal[index].place_Id())
+                output_Vector_List.append(list_Goal[index].goal_Id())
             cont_Transition += 1
         
         elif ToRefineAnd[index] == 'NONE' and ToRefineOr[index] != 'NONE':
@@ -23,9 +23,9 @@ def calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List
                 input_Vector_List.append(separador[index_Separador_Or])
                 list_Connection.append('Or')
                 indice = lst.index(separador[index_Separador_Or])
-                list_Type.append(list_Goal[indice].place_Type())
+                list_Type.append(list_Goal[indice].goal_Type())
                 list_Transition.append(cont_Transition)
-                output_Vector_List.append(list_Goal[index].place_Id())
+                output_Vector_List.append(list_Goal[index].goal_Id())
                 cont_Transition += 1    
 
         elif ToRefineAnd[index] != 'NONE' and ToRefineOr[index] != 'NONE':
@@ -37,9 +37,9 @@ def calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List
                     input_Vector_List.append(separador[index_Separador_And_1])
                     list_Connection.append('And')
                     indice = lst.index(separador[index_Separador_And_1])
-                    list_Type.append(list_Goal[indice].place_Type())
+                    list_Type.append(list_Goal[indice].goal_Type())
                     list_Transition.append(cont_Transition)
-                    output_Vector_List.append(list_Goal[index].place_Id())
+                    output_Vector_List.append(list_Goal[index].goal_Id())
                 cont_Transition += 1
             
             if ToRefineOr[index] != 'NONE':
@@ -50,9 +50,9 @@ def calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List
                     input_Vector_List.append(separador[index_Separador_Or_1])
                     list_Connection.append('Or')
                     indice = lst.index(separador[index_Separador_Or_1])
-                    list_Type.append(list_Goal[indice].place_Type())
+                    list_Type.append(list_Goal[indice].goal_Type())
                     list_Transition.append(cont_Transition)
-                    output_Vector_List.append(list_Goal[index].place_Id())
+                    output_Vector_List.append(list_Goal[index].goal_Id())
                     cont_Transition += 1  
         
         if ExpectationOf[index] !=  'NONE':
@@ -63,9 +63,9 @@ def calculate_Quantify_Transition(Id, ToRefineAnd, ToRefineOr, input_Vector_List
                 input_Vector_List.append(separador[index_Separador_ExpectationOf])
                 list_Connection.append('Or')
                 indice = lst.index(separador[index_Separador_ExpectationOf])
-                list_Type.append(list_Goal[indice].place_Type())
+                list_Type.append(list_Goal[indice].goal_Type())
                 list_Transition.append(cont_Transition)
-                output_Vector_List.append(list_Goal[index].place_Id())
+                output_Vector_List.append(list_Goal[index].goal_Id())
             cont_Transition += 1
     
     return cont_Transition
