@@ -48,16 +48,16 @@ def draw_Transition(net, index, input_Vector_List, output_Vector_List, Id, list_
     indice_Intput = lst_Id.index(input_Position)
     indice_Output = lst_Id.index(output_Position)
 
-    indice_Intput_X = float(list_Goal[indice_Intput].place_PositionX())
-    indice_Intput_Y = float(list_Goal[indice_Intput].place_PositionY())
+    indice_Intput_X = float(list_Goal[indice_Intput].goal_PositionX())
+    indice_Intput_Y = float(list_Goal[indice_Intput].goal_PositionY())
 
     ''' print('indice_Intput_X')
     print(indice_Intput_X)
     print('indice_Intput_Y')
     print(indice_Intput_Y) '''
 
-    indice_Output_X = float(list_Goal[indice_Output].place_PositionX())
-    indice_Output_Y = float(list_Goal[indice_Output].place_PositionY())
+    indice_Output_X = float(list_Goal[indice_Output].goal_PositionX())
+    indice_Output_Y = float(list_Goal[indice_Output].goal_PositionY())
 
     ''' print('indice_Output_X')
     print(indice_Output_X)
