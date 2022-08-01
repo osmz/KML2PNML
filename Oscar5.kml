@@ -651,4 +651,23 @@
 </Position>
 </Graphics>
 </Element>
+<Element>
+<Model>Operation</Model>
+<Id>48</Id>
+<Name>Sent Notification</Name>
+<Type>Operation</Type>
+<Precondition>test</Precondition>
+<Postcondition>test1</Postcondition>
+<Refinements>
+<Operationalizationof>258191;258150;258181;258185</Operationalizationof>
+</Refinements>
+<Graphics>
+<Height>49</Height>
+<Widtht>171</Widtht>
+<Position>
+<x>1091.0</x>
+<y>1070.0</y>
+</Position>
+</Graphics>
+</Element>
 </kml>

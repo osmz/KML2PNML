@@ -3085,7 +3085,7 @@
 </tagged> 
 <arcpath id="000" x="0" y="0" curvePoint="false" /> 
 <arcpath id="001" x="0" y="0" curvePoint="false" /> 
-<type value="inhibitor" /> 
+<type value="normal" /> 
 </arc> 
 <arc id="T40 to 35" source="T40" target="35"> 
 <graphics /> 
@@ -3215,7 +3215,7 @@
 </tagged> 
 <arcpath id="000" x="0" y="0" curvePoint="false" /> 
 <arcpath id="001" x="0" y="0" curvePoint="false" /> 
-<type value="inhibitor" /> 
+<type value="normal" /> 
 </arc> 
 <arc id="T45 to 50" source="T45" target="50"> 
 <graphics /> 
@@ -3267,7 +3267,7 @@
 </tagged> 
 <arcpath id="000" x="0" y="0" curvePoint="false" /> 
 <arcpath id="001" x="0" y="0" curvePoint="false" /> 
-<type value="inhibitor" /> 
+<type value="normal" /> 
 </arc> 
 <arc id="T47 to 51" source="T47" target="51"> 
 <graphics /> 
@@ -3319,7 +3319,635 @@
 </tagged> 
 <arcpath id="000" x="0" y="0" curvePoint="false" /> 
 <arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="258128 to T38" source="258128" target="T38"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
 <type value="inhibitor" /> 
+</arc> 
+<arc id="258130 to T43" source="258130" target="T43"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="inhibitor" /> 
+</arc> 
+<arc id="258133 to T45" source="258133" target="T45"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="inhibitor" /> 
+</arc> 
+<arc id="258134 to T47" source="258134" target="T47"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="inhibitor" /> 
+</arc> 
+<transition id="T49"> 
+<graphics> 
+<position x="1091.0" y="1070.0" /> 
+</graphics> 
+<name> 
+<value>T49</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="48- Post"> 
+<graphics> 
+<position x="1091.0" y="1170.0" /> 
+</graphics> 
+<name> 
+<value>48- Post</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="48- Post to T49" source="48- Post" target="T49"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T49 to 258191" source="T49" target="258191"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T50"> 
+<graphics> 
+<position x="1091.0" y="1270.0" /> 
+</graphics> 
+<name> 
+<value>T50</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="49- Pre"> 
+<graphics> 
+<position x="1091.0" y="1370.0" /> 
+</graphics> 
+<name> 
+<value>49- Pre</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="49- Pre to T50" source="49- Pre" target="T50"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T50 to 48- Post" source="T50" target="48- Post"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T51"> 
+<graphics> 
+<position x="1191.0" y="1070.0" /> 
+</graphics> 
+<name> 
+<value>T51</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="50- Post"> 
+<graphics> 
+<position x="1191.0" y="1170.0" /> 
+</graphics> 
+<name> 
+<value>50- Post</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="50- Post to T51" source="50- Post" target="T51"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T51 to 258150" source="T51" target="258150"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T52"> 
+<graphics> 
+<position x="1191.0" y="1270.0" /> 
+</graphics> 
+<name> 
+<value>T52</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="51- Pre"> 
+<graphics> 
+<position x="1191.0" y="1370.0" /> 
+</graphics> 
+<name> 
+<value>51- Pre</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="51- Pre to T52" source="51- Pre" target="T52"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T52 to 50- Post" source="T52" target="50- Post"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T53"> 
+<graphics> 
+<position x="1291.0" y="1070.0" /> 
+</graphics> 
+<name> 
+<value>T53</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="52- Post"> 
+<graphics> 
+<position x="1291.0" y="1170.0" /> 
+</graphics> 
+<name> 
+<value>52- Post</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="52- Post to T53" source="52- Post" target="T53"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T53 to 258181" source="T53" target="258181"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T54"> 
+<graphics> 
+<position x="1291.0" y="1270.0" /> 
+</graphics> 
+<name> 
+<value>T54</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="53- Pre"> 
+<graphics> 
+<position x="1291.0" y="1370.0" /> 
+</graphics> 
+<name> 
+<value>53- Pre</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="53- Pre to T54" source="53- Pre" target="T54"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T54 to 52- Post" source="T54" target="52- Post"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T55"> 
+<graphics> 
+<position x="1391.0" y="1070.0" /> 
+</graphics> 
+<name> 
+<value>T55</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="54- Post"> 
+<graphics> 
+<position x="1391.0" y="1170.0" /> 
+</graphics> 
+<name> 
+<value>54- Post</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="54- Post to T55" source="54- Post" target="T55"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T55 to 258185" source="T55" target="258185"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<transition id="T56"> 
+<graphics> 
+<position x="1391.0" y="1270.0" /> 
+</graphics> 
+<name> 
+<value>T56</value> 
+<graphics> 
+<offset x="11.0" y="43.0" /> 
+</graphics> 
+</name> 
+<orientation> 
+<value>0</value> 
+</orientation> 
+<rate> 
+<value>1.0</value> 
+</rate> 
+<timed> 
+<value>false</value> 
+</timed> 
+<infiniteServer> 
+<value>false</value> 
+</infiniteServer> 
+<priority> 
+<value>1</value> 
+</priority> 
+</transition> 
+<place id="55- Pre"> 
+<graphics> 
+<position x="1391.0" y="1370.0" /> 
+</graphics> 
+<name> 
+<value>55- Pre</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</name> 
+<initialMarking> 
+<value>Default,0</value> 
+<graphics> 
+<offset x="0.0" y="0.0" /> 
+</graphics> 
+</initialMarking> 
+<capacity> 
+<value>0</value> 
+</capacity> 
+</place> 
+<arc id="55- Pre to T56" source="55- Pre" target="T56"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
+</arc> 
+<arc id="T56 to 54- Post" source="T56" target="54- Post"> 
+<graphics /> 
+<inscription> 
+<value>Default,1</value> 
+<graphics /> 
+</inscription> 
+<tagged> 
+<value>false</value> 
+</tagged> 
+<arcpath id="000" x="0" y="0" curvePoint="false" /> 
+<arcpath id="001" x="0" y="0" curvePoint="false" /> 
+<type value="normal" /> 
 </arc> 
 </net> 
 </pnml>

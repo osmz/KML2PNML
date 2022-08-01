@@ -1,3 +1,5 @@
+from tkinter import END
+from turtle import end_fill
 from numpy import transpose
 import pandas as pd
 import xml.etree.ElementTree as ET
@@ -15,7 +17,7 @@ root = document.getroot()
 
 # Define the classes.
 
-class Place:
+class GOAL:
     def __init__(self, id, name,  type, positionX, positionY):
         self.id = id
         self.name = name
@@ -23,24 +25,47 @@ class Place:
         self.positionX = positionX
         self.positionY = positionY
     
-    def place_Id(self):
+    def goal_Id(self):
         return self.id
     
-    def place_Name(self):
+    def goal_Name(self):
         return self.name
 
-    def place_Type(self):
+    def goal_Type(self):
         return self.type
     
-    def place_PositionX(self):
+    def goal_PositionX(self):
         return self.positionX
 
-    def place_PositionY(self):
+    def goal_PositionY(self):
         return self.positionY
 
-class Transition:
-    def __init__(self, name):
-        self.name = name
+class OPERATION:
+    def __init__(self, id, precondition, postcondition, type, positionX, positionY):
+        self.id = id
+        self.precondition = precondition
+        self.postcondition = postcondition
+        self.type = type
+        self.positionX = positionX
+        self.positionY = positionY
+    
+    def operation_Id(self):
+        return self.id
+    
+    def operation_Precondition(self):
+        return self.precondition
+    
+    def operation_Postcondition(self):
+        return self.postcondition
+    
+    def operation_Type(self):
+        return self.type
+    
+    def operation_PositionX(self):
+        return self.positionX
+
+    def operation_PositionY(self):
+        return self.positionY
 
 # Initialize the empty lists of each tag.
 
@@ -163,7 +188,7 @@ for nodo in root.iter('Refinements'):
             OutputTo[aux_Len] = elemento.text
         if elemento.tag == 'PerformanceOf':
             PerformanceOf[aux_Len] = elemento.text
-        if elemento.tag == 'OperationalizationOf':
+        if elemento.tag == 'Operationalizationof':
             OperationalizationOf[aux_Len] = elemento.text
     aux_Len = aux_Len + 1
 
@@ -203,14 +228,17 @@ df_Operation = df.where(df['Model']=='Operation')
 df_Object = df.where(df['Model']=='Object')
 df_Responsability = df.where(df['Model']=='Responsability')
 
-aux_Mark = 'Default, 0'
-
 for index, row in df_Goal.iterrows():
     if df_Goal.loc[index][0] == 'Goal':
-        Goal = Place(row['Id'], row['Name'], row['Type'], row['PositionX'], row['PositionY'])
+        Goal = GOAL(row['Id'], row['Name'], row['Type'], row['PositionX'], row['PositionY'])
         list_Goal.append(Goal)
 
 helper_For_Goal_Size = len(list_Goal)
+
+for index, row in df_Operation.iterrows():
+    if df_Operation.loc[index][0] == 'Operation':
+        Operation = OPERATION(row['Id'], row['Precondition'], row['Postcondition'], row['Type'], row['PositionX'], row['PositionY'])
+        list_Operation.append(Operation)
 
 # Calculate the vector for the transitions
 
@@ -223,13 +251,13 @@ print(df_Transition)
 # Calculate the number of transitions
 
 quant_Transition = cont_Transition
-print('quant_Transition')
-print(quant_Transition)
+''' print('quant_Transition')
+print(quant_Transition) '''
 
 # Write .xml file
 
 xml_pnml = ET.tostring(WXml.write_Xml()) 
-pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, list_Type))
+pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, ToRefineAnd, ToRefineOr, ExpectationOf, OperationalizationOf, list_Operation))
 
 with open("Monitor_Night_Sleep.xml", "wb") as f: 
     f.write(xml_pnml)
@@ -243,12 +271,18 @@ WFXml.write_File_Xml()
 ''' df = transpose(df)
 print(df[6:8]) '''
 
+print('Id')
 print(Id)
+print('ToRefineAnd')
 print(ToRefineAnd)
+print('ToRefineOr')
 print(ToRefineOr)
+print('ExpectationOf')
 print(ExpectationOf)
+print('OperationalizationOf')
+print(OperationalizationOf)
 
-print(list_Goal[3].place_Id())
+print(list_Goal[3].goal_Id())
 
 ''' df = transpose(df)
 
@@ -276,10 +310,24 @@ print(ToRefineOr) '''
 
 print(df_Transition) '''
 
-''' print(list_Goal[0].place_Id())
-print(list_Goal[0].place_PositionX())
-print(list_Goal[0].place_PositionY()) '''
+''' print(list_Goal[0].goal_Id())
+print(list_Goal[0].goal_PositionX())
+print(list_Goal[0].goal_PositionY()) '''
 
-print(ToRefineAnd[13])
+''' print(ToRefineAnd[13])
 print(ToRefineOr[13])
-print(ExpectationOf[13])
+print(ExpectationOf[13]) '''
+
+''' print(len(ToRefineAnd))
+print(len(Precondition))
+print(Postcondition)
+print(OperationalizationOf)
+print(len(OperationalizationOf)) '''
+
+''' lst = Id
+indice = lst.index('258191')
+print(indice)
+print(list_Transition.pop()) '''
+
+''' print(df_Transition[0:60])
+ '''
