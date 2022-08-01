@@ -5,20 +5,20 @@ def draw_Place(net, list_Goal, index):
     # Place
     # Son 1.2
     place = ET.SubElement(net, 'place') 
-    place.set('id', list_Goal[index].place_Id())
+    place.set('id', list_Goal[index].goal_Id())
 
     # Son 1.2.1
     element1 = ET.SubElement(place, 'graphics')
     # Son 1.2.1.1 
     sub_element1 = ET.SubElement(element1, 'position')
-    sub_element1.set('x', list_Goal[index].place_PositionX()) 
-    sub_element1.set('y', list_Goal[index].place_PositionY()) 
+    sub_element1.set('x', list_Goal[index].goal_PositionX()) 
+    sub_element1.set('y', list_Goal[index].goal_PositionY()) 
 
     # Son 1.2.2
     element2 = ET.SubElement(place, 'name')
     # Son 1.2.2.1 
     sub_element2 = ET.SubElement(element2, 'value') 
-    sub_element2.text = list_Goal[index].place_Id()
+    sub_element2.text = list_Goal[index].goal_Id()
     # Son 1.2.2.2
     sub_element2 = ET.SubElement(element2, 'graphics')
     # Son 1.2.2.2.1
