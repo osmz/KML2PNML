@@ -4,8 +4,10 @@ import funtionDrawPlace as DPlace
 import funtionDrawTransition as DTransition
 import funtionDrawArrowOut as DArrowOut
 import funtionDrawArrowInt as DArrowInt
+import funtionDrawExpectation as DrawExpectation
+import funtionDrawOperationalization as DrawOperationalization
 
-def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, list_Type):
+def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_List, output_Vector_List, Id, list_Transition, ToRefineAnd, ToRefineOr, ExpectationOf, OperationalizationOf, list_Operation):
     # Father of the network - has children
     pnml = ET.Element('pnml')
 
@@ -22,7 +24,7 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_L
     token.set('green', '0')
     token.set('blue', '0')
 
-    # For to create all elements Place
+    # For to create all elements goal
     for index in range(helper_For_Goal_Size - 1, -1, -1):
         DPlace.draw_Place(net, list_Goal, index)
 
@@ -33,6 +35,12 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_L
     # For to create all elements Arc
     for index in range(len(input_Vector_List)): 
         DArrowOut.draw_Arrow_Out(list_Transition, index, net, output_Vector_List)
-        DArrowInt.draw_Arrow_Int(list_Type, net, input_Vector_List, index, list_Transition)
+        DArrowInt.draw_Arrow_Int(net, input_Vector_List, index, list_Transition)
+    
+    # Create all Expectation
+    DrawExpectation.draw_Expectation(ToRefineAnd, ToRefineOr, ExpectationOf, input_Vector_List, net, list_Transition)
+
+    # Create all Operationalization
+    DrawOperationalization.draw_Operationalization(OperationalizationOf, list_Transition, Id, list_Operation, net)
 
     return pnml
