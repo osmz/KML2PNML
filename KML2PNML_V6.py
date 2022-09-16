@@ -10,7 +10,7 @@ import funtionWritePnml as WPnml
 import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
-document = parse('Oscar5.kml') 
+document = parse('Oscar5.kml')
 ''' document = parse('oscar.kml') ''' 
 ''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
