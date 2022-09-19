@@ -35,7 +35,13 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, quant_Transition, input_Vector_L
     # For to create all elements Arc
     for index in range(len(input_Vector_List)): 
         DArrowOut.draw_Arrow_Out(list_Transition, index, net, output_Vector_List)
-        DArrowInt.draw_Arrow_Int(net, input_Vector_List, index, list_Transition)
+        #DArrowInt.draw_Arrow_Int(net, input_Vector_List, index, list_Transition)
+        A_normal = input_Vector_List
+        cont_1_normal = index
+        B_normal = list_Transition
+        cont_2_normal = index
+        
+        DArrowInt.draw_Arrow_Int(net, A_normal, cont_1_normal, B_normal, cont_2_normal)
     
     # Create all Expectation
     DrawExpectation.draw_Expectation(ToRefineAnd, ToRefineOr, ExpectationOf, input_Vector_List, net, list_Transition)
