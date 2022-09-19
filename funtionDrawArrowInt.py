@@ -1,14 +1,14 @@
 import xml.etree.ElementTree as ET
 
-def draw_Arrow_Int(net, input_Vector_List, index, list_Transition):
+def draw_Arrow_Int(net, A_normal, cont_1_normal, B_normal, cont_2_normal):
     # Arc 2
     # Son 1.5
     arc = ET.SubElement(net, 'arc') 
-    arc.set('id', str(input_Vector_List[index]) + ' to T' + str(list_Transition[index]))
+    arc.set('id', str(A_normal[cont_1_normal]) + ' to T' + str(B_normal[cont_2_normal]))
     ''' print('position teste and')
-    print(str(input_Vector_List[index]) + ' to T' + str(list_Transition[index])) '''
-    arc.set('source', str(input_Vector_List[index]))
-    arc.set('target', 'T' + str(list_Transition[index]))
+    print(str(A_normal[cont_1_normal]) + ' to T' + str(B[cont_2])) '''
+    arc.set('source', str(A_normal[cont_1_normal]))
+    arc.set('target', 'T' + str(B_normal[cont_2_normal]))
 
     # Son 1.5.1
     element1 = ET.SubElement(arc, 'graphics')
