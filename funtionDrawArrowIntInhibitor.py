@@ -1,14 +1,14 @@
 import xml.etree.ElementTree as ET
 
-def draw_Arrow_Int_Inhibitor(net, A_inhibitor, cont_1_inhibitor, B_inhibitor, cont_2_inhibitor):
+def draw_Arrow_Int_Inhibitor(net, A_name_id, A_cont_name_id, B_name_T, A_cont_name_T):
     # Arc 2
     # Son 1.5
     arc = ET.SubElement(net, 'arc') 
-    arc.set('id', str(A_inhibitor[cont_1_inhibitor]) + ' to T' + str(B_inhibitor[cont_2_inhibitor]))
+    arc.set('id', str(A_name_id[A_cont_name_id]) + ' to T' + str(B_name_T[A_cont_name_T]))
     ''' print('position teste and')
-    print(str(A_inhibitor[cont_1_inhibitor]) + ' to T' + str(B_inhibitor[cont_2_inhibitor])) '''
-    arc.set('source', str(A_inhibitor[cont_1_inhibitor]))
-    arc.set('target', 'T' + str(B_inhibitor[cont_2_inhibitor]))
+    print(str(A_name_id[A_cont_name_id]) + ' to T' + str(B_name_T[A_cont_name_T])) '''
+    arc.set('source', str(A_name_id[A_cont_name_id]))
+    arc.set('target', 'T' + str(B_name_T[A_cont_name_T]))
 
     # Son 1.5.1
     element1 = ET.SubElement(arc, 'graphics')
