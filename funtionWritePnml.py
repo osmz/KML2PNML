@@ -64,5 +64,5 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, cont_Transition, input_Vector_Li
         A_cont_name_T = index
         
         DArrowInt.draw_Arrow_Int(net, A_name_id, A_cont_name_id, A_name_T, A_cont_name_T) 
-
+    
     return pnml

@@ -265,7 +265,7 @@ print('')
 print(df_Transition)
 
 # Write .xml file
-xml_pnml = ET.tostring(WXml.write_Xml()) 
+xml_pnml = ET.tostring(WXml.write_Xml())
 pnml_pnml = ET.tostring(WPnml.write_Pnml(helper_For_Goal_Size, list_Goal, cont_Transition, input_Vector_List, output_Vector_List, list_Transition, lst_Id_Goal, ToRefineAnd, ToRefineOr, ExpectationOf, OperationalizationOf, list_Operation, list_Connection, list_Type, Id, lst_Id_Operation))
 
 # Generate the list with Operation
@@ -279,6 +279,7 @@ with open("Monitor_Night_Sleep.xml", "wb") as f:
     f.write(pnml_pnml)
     f.close() 
 
+# Function to format the file
 WFXml.write_File_Xml()
 
 # Space for test codes
