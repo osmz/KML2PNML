@@ -1,24 +1,24 @@
 import xml.etree.ElementTree as ET
 
-def draw_Place(net, list_Goal, index):
+def draw_Place(net, P_name, P_position_X, P_position_Y):
 
     # Place
     # Son 1.2
     place = ET.SubElement(net, 'place') 
-    place.set('id', list_Goal[index].goal_Id())
+    place.set('id', P_name)
 
     # Son 1.2.1
     element1 = ET.SubElement(place, 'graphics')
     # Son 1.2.1.1 
     sub_element1 = ET.SubElement(element1, 'position')
-    sub_element1.set('x', list_Goal[index].goal_PositionX()) 
-    sub_element1.set('y', list_Goal[index].goal_PositionY()) 
+    sub_element1.set('x', P_position_X) 
+    sub_element1.set('y', P_position_Y) 
 
     # Son 1.2.2
     element2 = ET.SubElement(place, 'name')
     # Son 1.2.2.1 
     sub_element2 = ET.SubElement(element2, 'value') 
-    sub_element2.text = list_Goal[index].goal_Id()
+    sub_element2.text = P_name
     # Son 1.2.2.2
     sub_element2 = ET.SubElement(element2, 'graphics')
     # Son 1.2.2.2.1
