@@ -8,7 +8,7 @@ import funtionWriteFileXml as WFXml
 
 from xml.etree.ElementTree import parse
 ''' document = parse('Oscar5.kml') '''
-document = parse('test3.kml')
+document = parse('test4.kml')
 ''' document = parse('Monitor_Night_Sleep.kml') ''' 
 root = document.getroot()
 
