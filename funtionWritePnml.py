@@ -6,7 +6,7 @@ import funtionDrawTransition as DTransiton
 import funtionDrawArrowOut as DArrowOut
 import funtionDrawArrowInt as DArrowInt
 import funtionDrawExpectation as DrawExpectation
-import funtionDrawOperationalization2 as DrawOperationalization2
+import funtionDrawOperationalization as DrawOperationalization
 
 def write_Pnml(helper_For_Goal_Size, list_Goal, cont_Transition, input_Vector_List, output_Vector_List, list_Transition, lst_Id_Goal, ToRefineAnd, ToRefineOr, ExpectationOf, OperationalizationOf, list_Operation, list_Connection, list_Type, Id, lst_Id_Operation):
     # Father of the network - has children
@@ -44,7 +44,7 @@ def write_Pnml(helper_For_Goal_Size, list_Goal, cont_Transition, input_Vector_Li
     DrawExpectation.draw_Expectation(input_Vector_List, ToRefineAnd, ToRefineOr, ExpectationOf, list_Transition, net)
     
     # Create all Operationalization
-    DrawOperationalization2.draw_Operationalization(cont_Transition, OperationalizationOf, lst_Id_Operation, list_Operation, net, input_Vector_List, list_Connection, list_Type, list_Transition, output_Vector_List, Id)
+    DrawOperationalization.draw_Operationalization(cont_Transition, OperationalizationOf, lst_Id_Operation, list_Operation, net, input_Vector_List, list_Connection, list_Type, list_Transition, output_Vector_List, Id)
     
     # For to create all elements Arc
     for index in range(len(input_Vector_List)): 
